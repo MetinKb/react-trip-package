@@ -2,7 +2,7 @@ import Icon from "./Icon"
 
 function Item({ item, handleOnChangeItem, handleDeleteItem }) {
     return (
-        <li className={`flex items-center justify-evenly gap-2 sm:text-xl text-sm backdrop-blur-md border border-black/40 p-2 rounded-lg  ${item.packed && "line-through"}`}>
+        <li className={`flex items-center justify-evenly gap-2 sm:text-xl text-lg backdrop-blur-md border border-black/40 p-2 rounded-lg  ${item.packed && "line-through"}`}>
             <input
                 type="checkbox"
                 checked={item.packed}

@@ -10,8 +10,8 @@ function Form({ items, handleAddItem, handleDeleteSelectedItems, sortBy, setSort
         setName(name => name.slice(0, 25))
     }
 
-    if (!/^[a-zA-Z]*$/.test(name)) {
-        setName(name => name.replace(/[^a-zA-Z]/g, ''))
+    if (!/^[\p{L}]*$/u.test(name)) {
+        setName(name => name.replace(/[^\p{L}]/gu, ''));
     }
 
     function handleSubmit(e) {
@@ -37,7 +37,7 @@ function Form({ items, handleAddItem, handleDeleteSelectedItems, sortBy, setSort
 
     return (
         <form onSubmit={handleSubmit} className="shadow-[0_0px_20px_1px_rgba(0,0,0,.2)] p-2 flex flex-col items-center justify-center gap-6 max-w-min min-h-max backdrop-blur-lg border rounded-lg border-black/30">
-            <h3 className="sm:text-2xl text-sm font-Montserrat">
+            <h3 className="sm:text-2xl text-lg font-Montserrat">
                 What do you need for your trip 👜?
             </h3>
             <span className="flex flex-col items-center justify-evenly gap-3 w-full ">
