@@ -3,7 +3,7 @@ function Footer({ items }) {
     const percentage = Math.round((packedItems / items.length) * 100)
 
     return (
-        <footer className="flex items-center justify-center m-2 sm:p-4 p-2 rounded-lg min-h-max backdrop-blur-md border border-black/40 sm:text-2xl text-lg ">
+        <footer className="flex items-center justify-center m-6 sm:p-4 p-2 rounded-lg min-h-max backdrop-blur-md border border-black/40 sm:text-2xl text-lg ">
             {items.length === 0 ? "Add some item to your pack!"
                 :
                 percentage === 100 ?
