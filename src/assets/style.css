@@ -6,7 +6,6 @@
 
 #root, body{
     height: 100%;
-    overflow: hidden !important;
 }
 
 ul::-webkit-scrollbar{
