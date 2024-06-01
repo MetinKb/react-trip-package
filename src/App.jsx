@@ -17,6 +17,9 @@ function App() {
     if (sortBy === "packed")
         sortedItems = items.slice().sort((a, b) => +a.packed - +b.packed)
 
+    if (sortBy === "quantity")
+        sortedItems = items.slice().sort((a, b) => a.quantity - b.quantity)
+
     useEffect(() => {
         const storedItems = localStorage.getItem("items")
         storedItems ? setItems(JSON.parse(storedItems)) : localStorage.setItem("items", JSON.stringify([]))

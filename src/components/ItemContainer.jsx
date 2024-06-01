@@ -3,7 +3,7 @@ import Item from "./Item"
 function ItemContainer({ items, handleOnChangeItem, handleDeleteItem }) {
 
     return (
-        <ul className="flex items-start justify-end flex-wrap p-4 sm:my-4 my-2 gap-3 overflow-auto">
+        <ul className="flex items-start justify-end flex-wrap p-4 sm:my-4 my-2 gap-3 overflow-auto w-full">
             {items.map((item, i) =>
                 <Item
                     item={item}

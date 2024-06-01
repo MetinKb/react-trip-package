@@ -10,15 +10,16 @@ function Form({ items, handleAddItem, handleDeleteSelectedItems, sortBy, setSort
         setName(name => name.slice(0, 25))
     }
 
-    if (!/^[\p{L}]*$/u.test(name)) {
-        setName(name => name.replace(/[^\p{L}]/gu, ''));
+    if (!/^[\p{L}\s]*$/u.test(name)) {
+        setName(name => name.replace(/[^\p{L}\s]/gu, ''));
     }
 
     function handleSubmit(e) {
         e.preventDefault()
 
-        if (!name) {
-            alert("Please add an item name!")
+        if (!name || name.trim() === "") {
+            alert("Please write the name of the item you want to add.")
+            setName("")
             return
         }
 
@@ -64,6 +65,7 @@ function Form({ items, handleAddItem, handleDeleteSelectedItems, sortBy, setSort
                             <option value="input">Sort by input order</option>
                             <option value="name">Sort by item name</option>
                             <option value="packed">Sort by packed status</option>
+                            <option value="quantity">Sort by quantity</option>
                         </select>
                     </>
                 </span>
